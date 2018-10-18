@@ -16,7 +16,7 @@ public class LoginService {
 		if(user != null) {
 			return user;
 		}else {
-			throw new RuntimeException("wrong");
+			throw new RuntimeException("error");
 		}
 	}
 

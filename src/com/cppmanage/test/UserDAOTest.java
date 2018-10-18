@@ -1,5 +1,5 @@
 package com.cppmanage.test;
 
-public class StudentDAOTest {
+public class UserDAOTest {
 
 }

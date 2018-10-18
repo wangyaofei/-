@@ -31,10 +31,15 @@ public class LoginServlet extends HttpServlet {
 		try {
 			loginService.login(id,pwd);
 			System.out.println("hahahahahahaha");
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			System.out.println("555555555555555");
-			e.printStackTrace();
+			if(e.getMessage().equals("error")) {
+				request.setAttribute("error", e.getMessage());
+				request.getRequestDispatcher("login.jsp").forward(request, response);
+			} else {
+				e.printStackTrace();
+			}
+			
 		}
 	}
 
