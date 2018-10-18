@@ -7,16 +7,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-my first jsp
-此页面暂时不用
 <h1>用户登录</h1>
-<form action="http://localhost:8080/CPPmanage/LoginServlet" method="get">
+<form action="${pageContext.request.contextPath }/LoginServlet" method="get">
 
   username <input type="text" plaseholder="请输入用户名..." name="username"> <br/>
   password <input type="text" plaseholder="请输入密码..." name="password"> <br/>
-
-<input type="submit" value="登录">
-
+  <input type="checkbox" name="remember_me" id="remember_me" /> <label for="remember_me">remember me</label>
+  <input type="submit" value="登录">
 
 </form>
 </body>

@@ -10,10 +10,11 @@ import com.alibaba.druid.pool.DruidDataSourceFactory;
 
 public class JDBCUtil {
 	public static DataSource ds = null;
+	
 	static {
 		try {
 			Properties p = new Properties();
-			FileInputStream in = new FileInputStream("resource/db.properties");
+			FileInputStream in = new FileInputStream("db.properties");
 			p.load(in);
 			ds = DruidDataSourceFactory.createDataSource(p);
 		}
@@ -29,6 +30,11 @@ public class JDBCUtil {
 			e.printStackTrace();
 		}
 		return null;
+	}
+
+	public static DataSource getDataSource() {
+		// TODO Auto-generated method stub
+		return ds;
 	}
 	
 }

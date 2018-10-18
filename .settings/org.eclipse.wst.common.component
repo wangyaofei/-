@@ -2,7 +2,6 @@
     <wb-module deploy-name="CPPmanage">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <wb-resource deploy-path="/WEB-INF/classes" source-path="/resource"/>
         <property name="context-root" value="CPPmanage"/>
         <property name="java-output-path" value="/CPPmanage/build/classes"/>
     </wb-module>
