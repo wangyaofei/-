@@ -10,3 +10,5 @@ create TABLE user
     tel VARCHAR(16),
     power int
 );
+
+INSERT into USER VALUES('10000','admin','1234','15326004997',3);

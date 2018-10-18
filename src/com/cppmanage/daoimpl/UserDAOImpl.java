@@ -43,16 +43,13 @@ public class UserDAOImpl implements IUserDAO {
 	}
 	
 	@Override
-	public void checkLogin(String name, String pwd) {
+	public User checkUser(String id, String pwd) throws SQLException {
 		// TODO Auto-generated method stub
 		QueryRunner qr = new QueryRunner(JDBCUtil.getDataSource());
-		String sql = "select * from Student where username=? and password=?";
-		try {
-			qr.query(sql,new BeanHandler<>(User.class));
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		String sql = "select * from user where id=? and password=?";
+		User user = null;
+		user = qr.query(sql,new BeanHandler<User>(User.class),id,pwd);
+		return user;
 	}
 
 }

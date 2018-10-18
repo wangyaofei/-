@@ -10,7 +10,7 @@
 <h1>用户登录</h1>
 <form action="${pageContext.request.contextPath }/LoginServlet" method="get">
 
-  username <input type="text" plaseholder="请输入用户名..." name="username"> <br/>
+  userid <input type="text" plaseholder="请输入用户名..." name="id"> <br/>
   password <input type="text" plaseholder="请输入密码..." name="password"> <br/>
   <input type="checkbox" name="remember_me" id="remember_me" /> <label for="remember_me">remember me</label>
   <input type="submit" value="登录">

@@ -1,5 +1,6 @@
 package com.cppmanage.dao;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import com.cppmanage.domain.User;
@@ -16,6 +17,6 @@ public interface IUserDAO {
 	
 	List<User> getAll();
 
-	void checkLogin(String name, String pwd);
+	User checkUser(String id, String pwd) throws SQLException;
 	
 }
