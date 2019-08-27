@@ -40,3 +40,4 @@ create table admin
 );
 INSERT into admin VALUES(10000,'π‹¿Ì‘±','1234');
 
+
