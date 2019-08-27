@@ -50,7 +50,7 @@
 		    <div class="logo">
 		        <img src="images/logo.png"/>
 		        <div class="logoText">
-		            <h1>穷在闹市出品</h1>
+		            <h1>程序设计基础二</h1>
 		            <p>qiongzainaoshi</p>
 		        </div>
 		    </div>
