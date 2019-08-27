@@ -17,7 +17,7 @@
 		<meta name="description" content="网站简介" />
 		<!-- 网站简介 -->
 		<meta name="keywords" content="搜索关键字，以半角英文逗号隔开" />
-		<title>穷在闹市出品</title>
+		<title>登录</title>
 
 		<!-- 公共样式 开始 -->
 		<link rel="shortcut icon" href="${pageContext.request.contextPath }/images/favicon.ico"/>
@@ -38,7 +38,7 @@
 		<div class="login_main">
 			<div class="box">
 				<div class="left">
-					<img src="images/logo.png" />
+					<img src="${pageContext.request.contextPath }/images/logo.png" />
 					<p>C++程序设计</p>
 				</div>
 				<div class="right">
@@ -61,8 +61,7 @@
 							<button class="layui-btn layui-btn-fluid login_but" lay-submit lay-filter="loginBut">登 录</button>
 							<span style = "color:red" > ${err } </span>
 						</div>
-						
-						
+
 						<div class="layui-form-item">
 							<input type="radio" name="power" value="1" title="学生" checked lay-filter="userType">
 							<input type="radio" name="power" value="2" title="教师" lay-filter="userType">
@@ -77,16 +76,16 @@
 				var form = layui.form;
 				//监听用户类型，改变风格
 				form.on('radio(userType)', function(data){
-					if(data.value == "学生"){
-						$(".loginBg").css("background","url('images/login_admin_bg.jpg')");
+					if(data.value == "1"){
+						$(".loginBg").css("background","url('${pageContext.request.contextPath }/images/login_admin_bg.jpg')");
 						$(".login_but").css("cssText", "background-color:#57c201 !important");
 					}
-					if(data.value == "教师"){
-						$(".loginBg").css("background","url('images/login_sh_bg.jpg')");
+					if(data.value == "2"){
+						$(".loginBg").css("background","url('${pageContext.request.contextPath }/images/login_sh_bg.jpg')");
 						$(".login_but").css("cssText", "background-color:#16c6f9 !important");
 					}
-					if(data.value == "管理员"){
-						$(".loginBg").css("background","url('images/login_fj_bg.jpg')");
+					if(data.value == "3"){
+						$(".loginBg").css("background","url('${pageContext.request.contextPath }/images/login_fj_bg.jpg')");
 						$(".login_but").css("cssText", "background-color:#ffd205 !important");
 					}
 				});

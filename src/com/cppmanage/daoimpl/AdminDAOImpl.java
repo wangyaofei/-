@@ -6,20 +6,20 @@ import java.util.List;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
 
-import com.cppmanage.dao.IUserDAO;
-import com.cppmanage.domain.User;
+import com.cppmanage.dao.IAdminDAO;
+import com.cppmanage.domain.Admin;
 import com.cppmanage.util.JDBCUtil;
 
-public class UserDAOImpl implements IUserDAO {
+public class AdminDAOImpl implements IAdminDAO {
 
 	@Override
-	public void save(User stu) {
+	public void save(Admin admin) {
 		// TODO Auto-generated method stub
 
 	}
 
 	@Override
-	public void update(User stu) {
+	public void update(Admin admin) {
 		// TODO Auto-generated method stub
 
 	}
@@ -31,26 +31,26 @@ public class UserDAOImpl implements IUserDAO {
 	}
 
 	@Override
-	public User get(String id) {
+	public Admin get(String id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<User> getAll() {
+	public List<Admin> getAll() {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
+
 	@Override
-	public User checkUser(String id, String pwd, String power) throws SQLException {
+	public Admin checkadmin(String id, String password) throws SQLException {
 		// TODO Auto-generated method stub
-		QueryRunner qr = new QueryRunner(JDBCUtil.getDataSource());
-		
-		String sql = "select * from user where id=? and password=? and power=?";
-		User user = null;
-		user = qr.query(sql,new BeanHandler<User>(User.class),id,pwd,power);
-		return user;
+		 QueryRunner qr = new QueryRunner(JDBCUtil.getDataSource());
+			
+		String sql = "select * from admin where admid=? and admpsw=?";
+		Admin admin = null;
+		admin = qr.query(sql,new BeanHandler<Admin>(Admin.class),id,password);
+		return admin;
 	}
 
 }
