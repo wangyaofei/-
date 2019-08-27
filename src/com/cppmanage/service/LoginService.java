@@ -8,15 +8,15 @@ import com.cppmanage.domain.User;
 
 public class LoginService {
 
-	public User login(String id, String pwd) throws SQLException {
+	public User login(String id, String pwd, String power) throws SQLException {
 		// TODO Auto-generated method stub
 		IUserDAO iloginDao = new UserDAOImpl();
-		User user = iloginDao.checkUser(id,pwd);
+		User user = iloginDao.checkUser(id,pwd,power);
 		
 		if(user != null) {
 			return user;
 		}else {
-			throw new RuntimeException("error");
+			throw new RuntimeException("用户名或密码错误");
 		}
 	}
 

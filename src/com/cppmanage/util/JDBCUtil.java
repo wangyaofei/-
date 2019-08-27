@@ -17,6 +17,7 @@ public class JDBCUtil {
 			String path = JDBCUtil.class.getClassLoader().getResource("db.properties").getPath();
 			FileInputStream in = new FileInputStream(path);
 			p.load(in);
+			
 			ds = DruidDataSourceFactory.createDataSource(p);
 		}
 		catch(Exception e) {

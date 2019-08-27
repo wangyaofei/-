@@ -1,5 +1,4 @@
 create database cppmanage;
-
 use cppmanage;
 
 create TABLE user
@@ -14,3 +13,5 @@ create TABLE user
 INSERT into USER VALUES('10000','admin','1234','15326004997',3);
 INSERT into USER VALUES('20000','admin','1234','15326004997',2);
 INSERT into USER VALUES('20180101','wang','1234','15326004997',1);
+
+
