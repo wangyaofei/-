@@ -11,4 +11,10 @@ public class Teacher {
 	private String tchemail;
 	private String tchdep;
 	private String tchtitle;
+	
+	@Override
+	public String toString()
+	{
+		return "Teacher [tchid=" + tchid + ",tchname=" + tchname + ",tchpsw=" + tchpsw;
+	}
 }

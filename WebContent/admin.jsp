@@ -10,14 +10,14 @@
 		<meta name="renderer" content="webkit">
 		<!--国产浏览器高速模式-->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="author" content="穷在闹市" />
+		<meta name="author" content="yaofeiwang" />
 		<!-- 作者 -->
-		<meta name="revised" content="穷在闹市.v3, 2019/05/01" />
+		<meta name="revised" content="yaofeiwang.v3, 2019/05/01" />
 		<!-- 定义页面的最新版本 -->
-		<meta name="description" content="网站简介" />
+		<meta name="description" content="管理员后台" />
 		<!-- 网站简介 -->
-		<meta name="keywords" content="搜索关键字，以半角英文逗号隔开" />
-		<title>穷在闹市出品</title>
+		<meta name="keywords" content="管理员页面" />
+		<title>项目式教学</title>
 
 		<!-- 公共样式 开始 -->
 		<link rel="shortcut icon" href="images/favicon.ico"/>
@@ -51,58 +51,22 @@
 		        <img src="images/logo.png"/>
 		        <div class="logoText">
 		            <h1>程序设计基础二</h1>
-		            <p>qiongzainaoshi</p>
+		            <p>项目式教学</p>
 		        </div>
 		    </div>
 		    <div class="menu">
 		        <ul>
 		        	<li>
-		                <a class="menuFA" href="javascript:void(0)" onclick="menuCAClick('tgls/qdAPI.html',this)"><i class="iconfont icon-zhishi left"></i>前端API</a>
+		                <a class="menuFA" href="javascript:void(0)" onclick="menuCAClick('${pageContext.request.contextPath }/ClassListServlet',this)"><i class="iconfont icon-liuliangyunpingtaitubiao03 left"></i>班级管理</a>
 		            </li>
+
 		        	<li>
-		                <a class="menuFA" href="javascript:void(0)" onclick="menuCAClick('tgls/iconfont.html',this)"><i class="iconfont icon-huojian left"></i>iconfont字体库</a>
-		           	</li>
-		        	<li>
-		                <a class="menuFA" href="javascript:void(0)"><i class="iconfont icon-liuliangyunpingtaitubiao03 left"></i>分管管理<i class="iconfont icon-dajiantouyou right"></i></a>
+		                <a class="menuFA" href="javascript:void(0)"><i class="iconfont icon-zhishi left"></i>人员管理<i class="iconfont icon-dajiantouyou right"></i></a>
 		                <dl>
-		                	<dt><a href="javascript:void(0)" onclick="menuCAClick('tgls/agent/agent_add.html',this)">添加分管</a></dt>
-		                	<dt><a href="javascript:void(0)" onclick="menuCAClick('tgls/agent/agent_list.html',this)">《C++程序设计》课程项目选择</a></dt>
+		                	<dt><a href="javascript:void(0)" onclick="menuCAClick('${pageContext.request.contextPath }/TeacherListServlet',this)">教师管理</a></dt>
+		                	<dt><a href="javascript:void(0)" onclick="menuCAClick('tgls/agent/agent_list.html',this)">学生管理</a></dt>
 		                </dl>
 		            </li>
-		        	<li>
-		                <a class="menuFA" href="javascript:void(0)"><i class="iconfont icon-shangpin left"></i>商品管理<i class="iconfont icon-dajiantouyou right"></i></a>
-		                <dl>
-		                	<dt><a href="javascript:void(0)" onclick="menuCAClick('tgls/goodsManage/goodsType_list.html',this)">上传作品</a></dt>
-		                	<dt><a href="javascript:void(0)" onclick="menuCAClick('tgls/goodsManage/goods_list.html',this)">基本商品库</a></dt>
-		                	<dt><a href="javascript:void(0)" onclick="menuCAClick('tgls/goodsManage/goods_add.html',this)">添加商品</a></dt>
-		                </dl>
-		            </li>
-		        	<li>
-		                <a class="menuFA" href="javascript:void(0)"><i class="iconfont icon-yunying left"></i>基础库内容<i class="iconfont icon-dajiantouyou right"></i></a>
-		                <dl>
-		                	<dt><a href="javascript:void(0)" onclick="menuCAClick('tgls/base/base_add.html',this)">表单含编辑器</a></dt>
-		                	<dt><a href="javascript:void(0)" onclick="menuCAClick('tgls/base/base_list.html',this)">常用列表</a></dt>
-		                	<dt><a href="javascript:void(0)" onclick="menuCAClick('tgls/base/base_customList.html',this)">可新增的列表</a></dt>
-		                	<dt><a href="javascript:void(0)" onclick="menuCAClick('tgls/base/base_customNewList.html',this)">可新增的列表(手写)</a></dt>
-		                	<dt><a href="javascript:void(0)" onclick="menuCAClick('tgls/base/pages.html',this)">页签切换Table</a></dt>
-		                	<dt><a href="javascript:void(0)" onclick="menuCAClick('tgls/base/maintain.html',this)">维护中页面</a></dt>
-		                </dl>
-		           	</li>
-		        	<li>
-		                <a class="menuFA" href="javascript:void(0)"><i class="iconfont icon-icon left"></i>打印模板<i class="iconfont icon-dajiantouyou right"></i></a>
-		                <dl>
-		                	<dt><a href="javascript:void(0)" onclick="menuCAClick('tgls/print/outPrintData.html',this)">入库单打印模版</a></dt>
-		                </dl>
-		           	</li>
-		        	<li>
-		                <a class="menuFA" href="javascript:void(0)"><i class="iconfont icon-caiwu left"></i>财务管理</a>
-		           	</li>
-		        	<li>
-		                <a class="menuFA" href="javascript:void(0)"><i class="iconfont icon-icon left"></i>报表模块<i class="iconfont icon-dajiantouyou right"></i></a>
-		                <dl>
-		                	<dt><a href="javascript:void(0)" onclick="menuCAClick('tgls/reportForm/reportForm1.html',this)">订单统计报表</a></dt>
-		                </dl>
-		           	</li>
 		        </ul>
 		    </div>
 		</div>
@@ -128,7 +92,7 @@
 					<span><i class="iconfont icon-xianshiqi"></i>后台首页</span>
 				</div>
 				<div class="con">
-					<iframe id="mainIframe" src="tgls/qdAPI.html" scrolling="no"></iframe>
+					<iframe id="mainIframe" src="tgls/agent/backpage.jsp" scrolling="no"></iframe>
 				</div>
 			</div>
 			<!-- 核心区域 - 结束 -->
