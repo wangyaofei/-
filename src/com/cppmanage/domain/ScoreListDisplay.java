@@ -3,9 +3,11 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Getter@Setter
-public class MClassListDisplay {
-	private String clsid;
-	private String clsname;
+public class ScoreListDisplay {
+	private String scrid;
+	private int scrvalue;
 	private String tchid;
+	private String stuid;
 	private String tchname;
+	private String stuname;
 }

@@ -8,49 +8,34 @@ import org.apache.commons.dbutils.handlers.BeanHandler;
 
 import com.cppmanage.dao.IAdminDAO;
 import com.cppmanage.domain.Admin;
+import com.cppmanage.domain.MClass;
 import com.cppmanage.util.JDBCUtil;
 
 public class AdminDAOImpl implements IAdminDAO {
 
-	@Override
-	public void save(Admin admin) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void update(Admin admin) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void delete(String id) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public Admin get(String id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Admin> getAll() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
+	
+	QueryRunner qr = new QueryRunner(JDBCUtil.getDataSource());
+	
 	@Override
 	public Admin checkadmin(String id, String password) throws SQLException {
 		// TODO Auto-generated method stub
-		 QueryRunner qr = new QueryRunner(JDBCUtil.getDataSource());
-			
 		String sql = "select * from admin where admid=? and admpsw=?";
 		Admin admin = null;
 		admin = qr.query(sql,new BeanHandler<Admin>(Admin.class),id,password);
 		return admin;
 	}
 
+	@Override
+	public void updateadmin(Admin admin) throws SQLException {
+		// TODO Auto-generated method stub
+		String sql = "update admin set admname=?,admpsw=? where admid=?";
+		qr.update(sql,admin.getAdmname(),admin.getAdmpsw(),admin.getAdmid());
+	}
+
+	@Override
+	public Admin getAdminWithID(String id) throws SQLException {
+		// TODO Auto-generated method stub
+		String sql = "select * from admin where admid=?";
+		return qr.query(sql, new BeanHandler<Admin>(Admin.class),id);
+	}
 }

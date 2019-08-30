@@ -9,6 +9,7 @@ import org.apache.commons.dbutils.handlers.BeanListHandler;
 
 import com.cppmanage.dao.IScoreDAO;
 import com.cppmanage.domain.Score;
+import com.cppmanage.domain.ScoreListDisplay;
 import com.cppmanage.util.JDBCUtil;
 
 public class ScoreDAOImpl implements IScoreDAO {
@@ -50,6 +51,12 @@ public class ScoreDAOImpl implements IScoreDAO {
 		// TODO Auto-generated method stub
 		String sql = "select * from score where scrid=?";
 		return qr.query(sql, new BeanHandler<Score>(Score.class),id);
+	}
+
+	@Override
+	public List<ScoreListDisplay> getAllDisplay() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

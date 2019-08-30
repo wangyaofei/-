@@ -4,12 +4,16 @@ import java.sql.SQLException;
 import java.util.List;
 
 import com.cppmanage.domain.Student;
+import com.cppmanage.domain.StudentListDisplay;
 
 public interface IStudentDAO {
-	void save(Student stu);
-	void update(Student stu);
-	void delete(String id);
-	Student get(String id);
-	List<Student> getAll();
+	
+	void updatestudent(Student student) throws SQLException;
+	void deletestudent(String id) throws SQLException;
+	List<Student> getAll() throws SQLException;
+	int addStudent(Student student) throws SQLException;
+	Student getStudentWithID(String id) throws SQLException;
+	List<StudentListDisplay> getAllDisplay() throws SQLException;
+	
 	Student checkStudent(String id, String password) throws SQLException;
 }

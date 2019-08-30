@@ -9,6 +9,7 @@ import org.apache.commons.dbutils.handlers.BeanListHandler;
 
 import com.cppmanage.dao.IMGroupDAO;
 import com.cppmanage.domain.MGroup;
+import com.cppmanage.domain.MGroupListDisplay;
 import com.cppmanage.util.JDBCUtil;
 
 public class MGroupDAOImpl implements IMGroupDAO {
@@ -49,6 +50,12 @@ public class MGroupDAOImpl implements IMGroupDAO {
 		// TODO Auto-generated method stub
 		String sql = "select * from mgroup where grpid=?";
 		return qr.query(sql, new BeanHandler<MGroup>(MGroup.class),id);
+	}
+
+	@Override
+	public List<MGroupListDisplay> getAllDisplay() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
