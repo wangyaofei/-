@@ -35,6 +35,22 @@ public class TeacherLoginService {
 		// TODO Auto-generated method stub
 		iteacherDao.deleteteacher(id);
 	}
+
+	public void addTeacher(Teacher teacher) throws SQLException {
+		// TODO Auto-generated method stub
+		iteacherDao.addTeacher(teacher);
+	}
+
+	public Teacher getTeacherWithID(String id) throws SQLException {
+		// TODO Auto-generated method stub
+		Teacher teacher = iteacherDao.getTeacherWithID(id);
+		return teacher;
+	}
+
+	public void updateTeacher(Teacher teacher) throws SQLException {
+		// TODO Auto-generated method stub
+		iteacherDao.updateteacher(teacher);
+	}
 	
 
 }

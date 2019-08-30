@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.cppmanage.domain.MClass;
+import com.cppmanage.domain.MClassListDisplay;
 import com.cppmanage.service.ClassService;
 
 /**
@@ -27,7 +27,7 @@ public class ClassListServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		ClassService classService = new ClassService();
 		try {
-			List<MClass> allClass = classService.getAllClass();
+			List<MClassListDisplay> allClass = classService.getAllClassDisplay();
 			request.setAttribute("allClass", allClass);
 			//服务器内部转发
 			request.getRequestDispatcher("tgls/agent/class_list.jsp").forward(request, response);

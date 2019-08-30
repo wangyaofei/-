@@ -80,10 +80,10 @@
 						<td>${status.index + 1 }</td>
 						<td>${classes.clsid }</td>
 						<td>${classes.clsname }</td>
-						<td>${classes.tchid }</td>
+						<td>${classes.tchname }</td>
 						<td>
 							<a href="${pageContext.request.contextPath }/ClassDelServlet?id=${classes.clsid}"><button class="layui-btn layui-btn-xs">删除</button></a>
-							<button  class="layui-btn layui-btn-xs">修改</button>
+							<a href="${pageContext.request.contextPath }/ClassUpdateUIServlet?id=${classes.clsid}"><button  class="layui-btn layui-btn-xs">修改</button></a>
 						</td>
 						</tr>
 					</c:forEach>

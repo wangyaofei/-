@@ -2,6 +2,8 @@ package com.cppmanage.web;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -9,13 +11,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.cppmanage.domain.MClass;
+import com.cppmanage.domain.Teacher;
 import com.cppmanage.service.ClassService;
+import com.cppmanage.service.TeacherLoginService;
 
 /**
- * Servlet implementation class ClassAddServlet
+ * Servlet implementation class ClassUpdateUIServlet
  */
-@WebServlet("/ClassAddServlet")
-public class ClassAddServlet extends HttpServlet {
+@WebServlet("/ClassUpdateUIServlet")
+public class ClassUpdateUIServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
@@ -23,28 +27,26 @@ public class ClassAddServlet extends HttpServlet {
 	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
-		request.setCharacterEncoding("utf-8");
-		
-		String clsid = request.getParameter("clsid");
-		String clsname = request.getParameter("clsname");
-		String tchid = request.getParameter("tchid");
-		//把参数封装成对象
-		MClass mClass = new MClass();
-		
-		mClass.setClsid(clsid);
-		mClass.setClsname(clsname);
-		mClass.setTchid(tchid);
-		
+		//获取当前班级信息
+		String id = request.getParameter("id");
 		ClassService classService = new ClassService();
-		
+
 		try {
-			classService.addClass(mClass);
-			request.getRequestDispatcher("/ClassListServlet").forward(request, response);
+			MClass mClass = classService.getClassWithID(id);
+			
+			request.setAttribute("mClass", mClass);
+
+			// 获取教师数据
+			TeacherLoginService teacherLoginService = new TeacherLoginService();
+			List<Teacher> allTeacher = teacherLoginService.getAllTeacher();
+			request.setAttribute("allTeacher", allTeacher);
+
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
+	
+		request.getRequestDispatcher("tgls/agent/class_update.jsp").forward(request, response);
 	}
+
 }

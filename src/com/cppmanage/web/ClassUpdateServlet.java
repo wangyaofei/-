@@ -2,6 +2,7 @@ package com.cppmanage.web;
 
 import java.io.IOException;
 import java.sql.SQLException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,10 +13,10 @@ import com.cppmanage.domain.MClass;
 import com.cppmanage.service.ClassService;
 
 /**
- * Servlet implementation class ClassAddServlet
+ * Servlet implementation class ClassUpdateServlet
  */
-@WebServlet("/ClassAddServlet")
-public class ClassAddServlet extends HttpServlet {
+@WebServlet("/ClassUpdateServlet")
+public class ClassUpdateServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
@@ -39,12 +40,12 @@ public class ClassAddServlet extends HttpServlet {
 		ClassService classService = new ClassService();
 		
 		try {
-			classService.addClass(mClass);
+			classService.updateClass(mClass);
 			request.getRequestDispatcher("/ClassListServlet").forward(request, response);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
 	}
+
 }

@@ -55,4 +55,11 @@ public class TeacherDAOImpl implements ITeacherDAO {
 		return 0;
 	}
 
+	@Override
+	public Teacher getTeacherWithID(String id) throws SQLException {
+		// TODO Auto-generated method stub
+		String sql = "select * from teacher where tchid=?";
+		return qr.query(sql, new BeanHandler<Teacher>(Teacher.class),id);
+	}
+
 }

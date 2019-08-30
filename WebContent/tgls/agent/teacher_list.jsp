@@ -45,6 +45,7 @@
 							<input type="text" name="name" required lay-verify="required" placeholder="输入项目编号" autocomplete="off" class="layui-input">
 						</div>
 						<button class="layui-btn" lay-submit lay-filter="formDemo">检索</button>
+						<a href="${pageContext.request.contextPath }/tgls/agent/teacher_add.jsp" class="layui-btn">新增</a>
 					</div>
 				</form>
 
@@ -88,7 +89,7 @@
 						<td>${teacheres.tchtitle }</td>
 						<td>
 							<a href="${pageContext.request.contextPath }/TeacherDelServlet?id=${teacheres.tchid}"><button class="layui-btn layui-btn-xs">删除</button></a>
-							<button  class="layui-btn layui-btn-xs">修改</button>
+							<a href="${pageContext.request.contextPath }/TeacherUpdateUIServlet?id=${teacheres.tchid}"><button  class="layui-btn layui-btn-xs">修改</button></a>
 						</td>
 						</tr>
 					</c:forEach>

@@ -3,7 +3,6 @@ package com.cppmanage.dao;
 import java.sql.SQLException;
 import java.util.List;
 
-import com.cppmanage.domain.MClass;
 import com.cppmanage.domain.Teacher;
 
 public interface ITeacherDAO {
@@ -12,4 +11,5 @@ public interface ITeacherDAO {
 	List<Teacher> getAll() throws SQLException;
 	int addTeacher(Teacher teacher) throws SQLException;
 	Teacher checkTeacher(String id, String password) throws SQLException;
+	Teacher getTeacherWithID(String id) throws SQLException;
 }

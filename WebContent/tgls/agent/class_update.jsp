@@ -45,27 +45,27 @@
 
 	<body>
 		<div class="cBody">
-			<form id="addForm" class="layui-form" action="${pageContext.request.contextPath }/ClassAddServlet" method="post">
-					<label style="font-size:30px;">&nbsp; &nbsp; &nbsp; 新增班级--> </label>
+			<form id="addForm" class="layui-form" action="${pageContext.request.contextPath }/ClassUpdateServlet" method="post">
+					<label style="font-size:30px;">&nbsp; &nbsp; &nbsp; 班级修改--> </label>
 					<br /> <br /> <br /> <br />
 				<div class="layui-form-item">
 					<label class="layui-form-label">班号</label>
 					<div class="layui-input-inline shortInput">
-						<input type="text" name="clsid" required autocomplete="off" class="layui-input">
+						<input type="text" name="clsid" required autocomplete="off" class="layui-input" value="${mClass.clsid }">
 					</div>
 					<i class="iconfont icon-huaban bt"></i>
 				</div>
 				<div class="layui-form-item">
 					<label class="layui-form-label">班级名称</label>
 					<div class="layui-input-inline shortInput">
-						<input type="text" name="clsname" required autocomplete="off" class="layui-input">
+						<input type="text" name="clsname" required autocomplete="off" class="layui-input" value="${mClass.clsname }">
 					</div>
 					<i class="iconfont icon-huaban bt"></i>
 				</div>
 				<div class="layui-form-item">
 					<label class="layui-form-label">指导教师</label>
 	                <div class="layui-input-inline shortInput" >
-	                    <select name="tchid">
+	                    <select  id="tchOption"  name="tchid">
 	                    	<c:forEach items="${allTeacher }" var="teachers">
 	                    		<option value="${teachers.tchid }">${teachers.tchname }</option>
 	                    	</c:forEach>
@@ -75,8 +75,7 @@
 				
 				<div class="layui-form-item">
 					<div class="layui-input-block">
-						<button class="layui-btn" lay-submit lay-filter="submitBut" id="add">立即提交</button>
-						<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+						<button class="layui-btn" lay-submit lay-filter="submitBut" id="add">立即修改</button>
 					</div>
 				</div>
 			</form>
@@ -96,13 +95,25 @@
 		        };
 			</script>
 			
-			<!--  
+ 			<!--  
 			<script>
 			$("#add").click(function() {
 				$("#addForm").submit();
 			});
 			</script>
  			-->
+ 			
+			<script>
+			$(function() {
+				
+				$("#tchOption option[value=${mClass.tchid}]").prop("selected",true);
+				
+			});
+				
+			</script>
+ 			
+ 			
+ 			
 		</div>
 	</body>
 

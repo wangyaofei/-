@@ -8,14 +8,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.cppmanage.domain.MClass;
-import com.cppmanage.service.ClassService;
+import com.cppmanage.domain.Teacher;
+import com.cppmanage.service.TeacherLoginService;
 
 /**
- * Servlet implementation class ClassAddServlet
+ * Servlet implementation class TeacherUpdateUIServlet
  */
-@WebServlet("/ClassAddServlet")
-public class ClassAddServlet extends HttpServlet {
+@WebServlet("/TeacherUpdateUIServlet")
+public class TeacherUpdateUIServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
@@ -23,28 +23,19 @@ public class ClassAddServlet extends HttpServlet {
 	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
-		request.setCharacterEncoding("utf-8");
-		
-		String clsid = request.getParameter("clsid");
-		String clsname = request.getParameter("clsname");
-		String tchid = request.getParameter("tchid");
-		//把参数封装成对象
-		MClass mClass = new MClass();
-		
-		mClass.setClsid(clsid);
-		mClass.setClsname(clsname);
-		mClass.setTchid(tchid);
-		
-		ClassService classService = new ClassService();
-		
+		String id = request.getParameter("id");
+		TeacherLoginService teacherLoginService = new TeacherLoginService();
+
 		try {
-			classService.addClass(mClass);
-			request.getRequestDispatcher("/ClassListServlet").forward(request, response);
+			Teacher teacher = teacherLoginService.getTeacherWithID(id);
+			request.setAttribute("teacher", teacher);
+
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
+	
+		request.getRequestDispatcher("tgls/agent/teacher_update.jsp").forward(request, response);
 	}
+
 }

@@ -6,6 +6,7 @@ import java.util.List;
 import com.cppmanage.dao.IMClassDAO;
 import com.cppmanage.daoimpl.MClassDAOImpl;
 import com.cppmanage.domain.MClass;
+import com.cppmanage.domain.MClassListDisplay;
 
 public class ClassService {
 
@@ -14,6 +15,14 @@ public class ClassService {
 		// TODO Auto-generated method stub
 		
 		List<MClass> allClass = imClassDAO.getAll();
+		
+		return allClass;
+	}
+	
+	public List<MClassListDisplay> getAllClassDisplay() throws SQLException {
+		// TODO Auto-generated method stub
+		
+		List<MClassListDisplay> allClass = imClassDAO.getAllDisplay();
 		
 		return allClass;
 	}
@@ -26,6 +35,17 @@ public class ClassService {
 	public void addClass(MClass mClass) throws SQLException {
 		// TODO Auto-generated method stub
 		imClassDAO.addClass(mClass);
+	}
+
+	public MClass getClassWithID(String id) throws SQLException {
+		// TODO Auto-generated method stub
+		MClass mClass = imClassDAO.getClassWithID(id);
+		return mClass;
+	}
+
+	public void updateClass(MClass mClass) throws SQLException {
+		// TODO Auto-generated method stub
+		imClassDAO.updateclass(mClass);
 	}
 
 }
