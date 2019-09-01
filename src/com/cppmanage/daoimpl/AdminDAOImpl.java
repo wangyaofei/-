@@ -1,14 +1,11 @@
 package com.cppmanage.daoimpl;
 
 import java.sql.SQLException;
-import java.util.List;
-
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
 
 import com.cppmanage.dao.IAdminDAO;
 import com.cppmanage.domain.Admin;
-import com.cppmanage.domain.MClass;
 import com.cppmanage.util.JDBCUtil;
 
 public class AdminDAOImpl implements IAdminDAO {
