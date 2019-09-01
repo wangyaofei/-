@@ -8,7 +8,6 @@ import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 
 import com.cppmanage.dao.IStudentDAO;
-import com.cppmanage.domain.MClass;
 import com.cppmanage.domain.Student;
 import com.cppmanage.domain.StudentListDisplay;
 import com.cppmanage.util.JDBCUtil;
