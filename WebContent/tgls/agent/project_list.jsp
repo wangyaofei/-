@@ -15,9 +15,9 @@
 		<!-- 作者 -->
 		<meta name="revised" content="yaofeiwang.v3, 2019/05/01" />
 		<!-- 定义页面的最新版本 -->
-		<meta name="description" content="yaofeiwang" />
+		<meta name="description" content="后台教师管理" />
 		<!-- 网站简介 -->
-		<meta name="keywords" content="yaofeiwang" />
+		<meta name="keywords" content="后台教师管理" />
 		<title>项目式教学</title>
 
 		<!-- 公共样式 开始 -->
@@ -42,10 +42,10 @@
 				<form class="layui-form" action="">
 					<div class="layui-form-item">
 						<div class="layui-input-inline">
-							<input type="text" name="name" required lay-verify="required" placeholder="输入班号" autocomplete="off" class="layui-input">
+							<input type="text" name="name" required lay-verify="required" placeholder="输入项目编号" autocomplete="off" class="layui-input">
 						</div>
 						<button class="layui-btn" lay-submit lay-filter="formDemo">检索</button>
-						<a href="${pageContext.request.contextPath }/StudentAddUIServlet" class="layui-btn">新增</a>
+						<a href="${pageContext.request.contextPath }/tgls/agent/teacher_add.jsp" class="layui-btn">新增</a>
 					</div>
 				</form>
 
@@ -66,34 +66,30 @@
 				<thead>
 					<tr>
 						<th>序号</th>
-						<th>学号</th>
+						<th>教师编号</th>
 						<th>姓名</th>
 						<th>性别</th>
 						<th>邮箱</th>
-						<th>指导教师</th>
-						<th>所在班级</th>
-						<th>所在组</th>
-						<th>所选项目</th>
+						<th>系部</th>
+						<th>职称</th>
 						<th>操作</th>
 					</tr>
 				</thead>
 				
 				<tbody>
 				
-					<c:forEach items="${allStudentDisplay }" var="students" varStatus="status">
+					<c:forEach items="${allTeacher }" var="teacheres" varStatus="status">
 						<tr>
 						<td>${status.index + 1 }</td>
-						<td>${students.stuid }</td>
-						<td>${students.stuname }</td>
-						<td>${students.stusex }</td>
-						<td>${students.stuemail }</td>
-						<td>${students.tchname }</td>
-						<td>${students.clsname }</td>
-						<td>${students.grpname }</td>
-						<td>${students.proname }</td>
+						<td>${teacheres.tchid }</td>
+						<td>${teacheres.tchname }</td>
+						<td>${teacheres.tchsex }</td>
+						<td>${teacheres.tchemail }</td>
+						<td>${teacheres.tchdep }</td>
+						<td>${teacheres.tchtitle }</td>
 						<td>
-							<a href="${pageContext.request.contextPath }/StudentDelServlet?id=${students.stuid}"><button class="layui-btn layui-btn-xs">删除</button></a>
-							<a href="${pageContext.request.contextPath }/StudentUpdateUIServlet?id=${students.stuid}"><button  class="layui-btn layui-btn-xs">修改</button></a>
+							<a href="${pageContext.request.contextPath }/TeacherDelServlet?id=${teacheres.tchid}"><button class="layui-btn layui-btn-xs">删除</button></a>
+							<a href="${pageContext.request.contextPath }/TeacherUpdateUIServlet?id=${teacheres.tchid}"><button  class="layui-btn layui-btn-xs">修改</button></a>
 						</td>
 						</tr>
 					</c:forEach>

@@ -20,27 +20,27 @@
 		<title>项目式教学</title>
 
 		<!-- 公共样式 开始 -->
-		<link rel="shortcut icon" href="images/favicon.ico"/>
-		<link rel="bookmark" href="images/favicon.ico"/>
-		<link rel="stylesheet" type="text/css" href="css/base.css">
-		<link rel="stylesheet" type="text/css" href="css/iconfont.css">
-		<script type="text/javascript" src="framework/jquery-1.11.3.min.js" ></script>
-		<link rel="stylesheet" type="text/css" href="layui/css/layui.css">
+		<link rel="shortcut icon" href="${pageContext.request.contextPath }/images/favicon.ico"/>
+		<link rel="bookmark" href="${pageContext.request.contextPath }/images/favicon.ico"/>
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/css/base.css">
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/css/iconfont.css">
+		<script type="text/javascript" src="${pageContext.request.contextPath }/framework/jquery-1.11.3.min.js" ></script>
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/layui/css/layui.css">
 	    <!--[if lt IE 9]>
 	      	<script src="framework/html5shiv.min.js"></script>
 	      	<script src="framework/respond.min.js"></script>
 	    <![endif]-->
-		<script type="text/javascript" src="layui/layui.js"></script>
+		<script type="text/javascript" src="${pageContext.request.contextPath }/layui/layui.js"></script>
 		<!-- 滚动条插件 -->
-		<link rel="stylesheet" type="text/css" href="css/jquery.mCustomScrollbar.css">
-		<script src="framework/jquery-ui-1.10.4.min.js"></script>
-		<script src="framework/jquery.mousewheel.min.js"></script>
-		<script src="framework/jquery.mCustomScrollbar.min.js"></script>
-		<script src="framework/cframe.js"></script><!-- 仅供所有子页面使用 -->
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/css/jquery.mCustomScrollbar.css">
+		<script src="${pageContext.request.contextPath }/framework/jquery-ui-1.10.4.min.js"></script>
+		<script src="${pageContext.request.contextPath }/framework/jquery.mousewheel.min.js"></script>
+		<script src="${pageContext.request.contextPath }/framework/jquery.mCustomScrollbar.min.js"></script>
+		<script src="${pageContext.request.contextPath }/framework/cframe.js"></script><!-- 仅供所有子页面使用 -->
 		<!-- 公共样式 结束 -->
 		
-		<link rel="stylesheet" type="text/css" href="css/frameStyle.css">
-		<script type="text/javascript" src="framework/frame.js" ></script>
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/css/frameStyle.css">
+		<script type="text/javascript" src="${pageContext.request.contextPath }/framework/frame.js" ></script>
 		
 	</head>
 
@@ -51,7 +51,7 @@
 		        <img src="images/logo.png"/>
 		        <div class="logoText">
 		            <h1>程序设计基础二</h1>
-		            <p>项目式教学</p>
+		            <p>项目式教学管理员后台</p>
 		        </div>
 		    </div>
 		    <div class="menu">
