@@ -45,7 +45,7 @@
 							<input type="text" name="name" required lay-verify="required" placeholder="输入班号" autocomplete="off" class="layui-input">
 						</div>
 						<button class="layui-btn" lay-submit lay-filter="formDemo">检索</button>
-						<a href="${pageContext.request.contextPath }/ClassAddUIServlet" class="layui-btn">新增</a>
+						<a href="${pageContext.request.contextPath }/StudentAddUIServlet" class="layui-btn">新增</a>
 					</div>
 				</form>
 
@@ -80,15 +80,20 @@
 				
 				<tbody>
 				
-					<c:forEach items="${allClass }" var="classes" varStatus="status">
+					<c:forEach items="${allStudentDisplay }" var="students" varStatus="status">
 						<tr>
 						<td>${status.index + 1 }</td>
-						<td>${classes.clsid }</td>
-						<td>${classes.clsname }</td>
-						<td>${classes.tchname }</td>
+						<td>${students.stuid }</td>
+						<td>${students.stuname }</td>
+						<td>${students.stusex }</td>
+						<td>${students.stuemail }</td>
+						<td>${students.tchname }</td>
+						<td>${students.clsname }</td>
+						<td>${students.grpname }</td>
+						<td>${students.proname }</td>
 						<td>
-							<a href="${pageContext.request.contextPath }/ClassDelServlet?id=${classes.clsid}"><button class="layui-btn layui-btn-xs">删除</button></a>
-							<a href="${pageContext.request.contextPath }/ClassUpdateUIServlet?id=${classes.clsid}"><button  class="layui-btn layui-btn-xs">修改</button></a>
+							<a href="${pageContext.request.contextPath }/StudentDelServlet?id=${students.stuid}"><button class="layui-btn layui-btn-xs">删除</button></a>
+							<a href="${pageContext.request.contextPath }/StudentUpdateUIServlet?id=${students.stuid}"><button  class="layui-btn layui-btn-xs">修改</button></a>
 						</td>
 						</tr>
 					</c:forEach>

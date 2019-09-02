@@ -33,7 +33,6 @@ public class ClassUpdateUIServlet extends HttpServlet {
 
 		try {
 			MClass mClass = classService.getClassWithID(id);
-			
 			request.setAttribute("mClass", mClass);
 
 			// 获取教师数据

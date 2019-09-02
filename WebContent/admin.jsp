@@ -64,7 +64,7 @@
 		                <a class="menuFA" href="javascript:void(0)"><i class="iconfont icon-zhishi left"></i>人员管理<i class="iconfont icon-dajiantouyou right"></i></a>
 		                <dl>
 		                	<dt><a href="javascript:void(0)" onclick="menuCAClick('${pageContext.request.contextPath }/TeacherListServlet',this)">教师管理</a></dt>
-		                	<dt><a href="javascript:void(0)" onclick="menuCAClick('tgls/agent/agent_list.html',this)">学生管理</a></dt>
+		                	<dt><a href="javascript:void(0)" onclick="menuCAClick('${pageContext.request.contextPath }/StudentListServlet',this)">学生管理</a></dt>
 		                </dl>
 		            </li>
 		        </ul>

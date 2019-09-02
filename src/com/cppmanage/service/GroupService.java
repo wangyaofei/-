@@ -12,7 +12,7 @@ public class GroupService {
 	
 	IMGroupDAO imGroupDAO = new MGroupDAOImpl();
 	
-	public List<MGroup> getAllClass() throws SQLException {
+	public List<MGroup> getAllGroup() throws SQLException {
 		// TODO Auto-generated method stub
 		List<MGroup> allGroup = imGroupDAO.getAll();
 		return allGroup;

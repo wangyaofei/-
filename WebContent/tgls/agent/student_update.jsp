@@ -45,29 +45,83 @@
 
 	<body>
 		<div class="cBody">
-			<form id="addForm" class="layui-form" action="${pageContext.request.contextPath }/ClassUpdateServlet" method="post">
-					<label style="font-size:30px;">&nbsp; &nbsp; &nbsp; 班级修改--> </label>
+			<form id="addForm" class="layui-form" action="${pageContext.request.contextPath }/StudentUpdateServlet" method="post">
+					<label style="font-size:30px;">&nbsp; &nbsp; &nbsp; 学生修改--> </label>
 					<br /> <br /> <br /> <br />
 				<div class="layui-form-item">
-					<label class="layui-form-label">班号</label>
+					<label class="layui-form-label">学号</label>
 					<div class="layui-input-inline shortInput">
-						<input type="text" name="clsid" required autocomplete="off" class="layui-input" value="${mClass.clsid }">
+						<input readonly  unselectable="on"  type="text" name="stuid" required autocomplete="off" class="layui-input" value="${student.stuid }">
+					</div>
+					<i class="iconfont icon-huaban bt">不可更改</i>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">姓名</label>
+					<div class="layui-input-inline shortInput">
+						<input type="text" name="stuname" required autocomplete="off" class="layui-input" value="${student.stuname }">
 					</div>
 					<i class="iconfont icon-huaban bt"></i>
 				</div>
 				<div class="layui-form-item">
-					<label class="layui-form-label">班级名称</label>
+					<label class="layui-form-label">密码</label>
 					<div class="layui-input-inline shortInput">
-						<input type="text" name="clsname" required autocomplete="off" class="layui-input" value="${mClass.clsname }">
+						<input type="password" name="stupsw" required autocomplete="off" class="layui-input" value="${student.stupsw }">
 					</div>
 					<i class="iconfont icon-huaban bt"></i>
 				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">性别</label>
+					<div class="layui-input-inline shortInput">
+						<input type="text" name="stusex" autocomplete="off" class="layui-input" value="${student.stusex }">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">邮箱</label>
+					<div class="layui-input-inline shortInput">
+						<input type="text" name="stuemail" autocomplete="off" class="layui-input" value="${student.stuemail }">
+					</div>
+				</div>
+				
 				<div class="layui-form-item">
 					<label class="layui-form-label">指导教师</label>
 	                <div class="layui-input-inline shortInput" >
-	                    <select  id="tchOption"  name="tchid">
+	                    <select id="tchOption" name="tchid">
+	                        <option value="null">暂无</option>
 	                    	<c:forEach items="${allTeacher }" var="teachers">
 	                    		<option value="${teachers.tchid }">${teachers.tchname }</option>
+	                    	</c:forEach>
+	                    </select>
+	                </div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">所在班级</label>
+	                <div class="layui-input-inline shortInput" >
+	                    <select id="clsOption" name="clsid">
+	                    	<option value="null">暂无</option>
+	                    	<c:forEach items="${allClass }" var="classes">
+	                    		<option value="${classes.clsid }">${classes.clsname }</option>
+	                    	</c:forEach>
+	                    </select>
+	                </div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">所在组</label>
+	                <div class="layui-input-inline shortInput" >
+	                    <select id="grpOption" name="grpid">
+	                    	<option value="null">暂无</option>
+	                    	<c:forEach items="${allGroup }" var="groups">
+	                    		<option value="${groups.grpid }">${groups.grpname }</option>
+	                    	</c:forEach>
+	                    </select>
+	                </div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">所选项目</label>
+	                <div class="layui-input-inline shortInput" >
+	                    <select id="proOption" name="proid">
+	                    	<option value="null">暂无</option>
+	                    	<c:forEach items="${allProject }" var="projects">
+	                    		<option value="${projects.proid }">${projects.proname }</option>
 	                    	</c:forEach>
 	                    </select>
 	                </div>
@@ -105,15 +159,31 @@
  			
 			<script>
 			$(function() {
-				
-				$("#tchOption option[value=${mClass.tchid}]").prop("selected",true);
-				
+				if(${student.tchid} != null)
+					$("#tchOption option[value=${student.tchid}]").prop("selected",true);
 			});
-				
 			</script>
- 			
- 			
- 			
+			
+			<script>
+			$(function() {
+				if(${student.clsid} != null)
+					$("#clsOption option[value=${student.clsid}]").prop("selected",true);
+			});
+			</script>
+			
+			<script>
+			$(function() {
+				if(${student.grpid} != null)
+					$("#grpOption option[value=${student.grpid}]").prop("selected",true);
+			});
+			</script>
+			<script>
+			$(function() {
+				if(${student.proid} != null)
+					$("#proOption option[value=${student.proid}]").prop("selected",true);
+			});
+			</script>
+			
 		</div>
 	</body>
 

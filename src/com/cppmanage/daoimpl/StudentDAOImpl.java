@@ -66,7 +66,13 @@ public class StudentDAOImpl implements IStudentDAO {
 	@Override
 	public List<StudentListDisplay> getAllDisplay() throws SQLException {
 		// TODO Auto-generated method stub
-		return null;
+		String sql = "select stuid,stuname,stupsw,stusex,stuemail,stu.tchid,stu.clsid,stu.grpid,stu.proid,tch.tchname,cls.clsname,grp.grpname,pro.proname \r\n" + 
+				"from student as stu LEFT JOIN teacher as tch on stu.tchid = tch.tchid\r\n" + 
+				"    LEFT JOIN mclass as cls on stu.clsid = cls.clsid\r\n" + 
+				"		LEFT JOIN mgroup as grp on stu.grpid = grp.grpid\r\n" + 
+				"    LEFT JOIN mproject as pro on stu.proid = pro.proid;\r\n" + 
+				"";
+		return qr.query(sql, new BeanListHandler<StudentListDisplay>(StudentListDisplay.class));
 	}
 
 }

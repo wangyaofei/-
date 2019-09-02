@@ -23,7 +23,6 @@ public class ClassAddServlet extends HttpServlet {
 	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
 		request.setCharacterEncoding("utf-8");
 		
 		String clsid = request.getParameter("clsid");
@@ -45,6 +44,9 @@ public class ClassAddServlet extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		
+		
 
 	}
 }

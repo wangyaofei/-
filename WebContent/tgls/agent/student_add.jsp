@@ -86,6 +86,7 @@
 					<label class="layui-form-label">指导教师</label>
 	                <div class="layui-input-inline shortInput" >
 	                    <select name="tchid">
+	                        <option value="null">暂无</option>
 	                    	<c:forEach items="${allTeacher }" var="teachers">
 	                    		<option value="${teachers.tchid }">${teachers.tchname }</option>
 	                    	</c:forEach>
@@ -96,8 +97,9 @@
 					<label class="layui-form-label">所在班级</label>
 	                <div class="layui-input-inline shortInput" >
 	                    <select name="clsid">
-	                    	<c:forEach items="${allTeacher }" var="teachers">
-	                    		<option value="${teachers.tchid }">${teachers.tchname }</option>
+	                    	<option value="null">暂无</option>
+	                    	<c:forEach items="${allClass }" var="classes">
+	                    		<option value="${classes.clsid }">${classes.clsname }</option>
 	                    	</c:forEach>
 	                    </select>
 	                </div>
@@ -106,8 +108,9 @@
 					<label class="layui-form-label">所在组</label>
 	                <div class="layui-input-inline shortInput" >
 	                    <select name="grpid">
-	                    	<c:forEach items="${allTeacher }" var="teachers">
-	                    		<option value="${teachers.tchid }">${teachers.tchname }</option>
+	                    	<option value="null">暂无</option>
+	                    	<c:forEach items="${allGroup }" var="groups">
+	                    		<option value="${groups.grpid }">${groups.grpname }</option>
 	                    	</c:forEach>
 	                    </select>
 	                </div>
@@ -115,9 +118,10 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">所选项目</label>
 	                <div class="layui-input-inline shortInput" >
-	                    <select name="grpid">
-	                    	<c:forEach items="${allTeacher }" var="teachers">
-	                    		<option value="${teachers.tchid }">${teachers.tchname }</option>
+	                    <select name="proid">
+	                    	<option value="null">暂无</option>
+	                    	<c:forEach items="${allProject }" var="projects">
+	                    		<option value="${projects.proid }">${projects.proname }</option>
 	                    	</c:forEach>
 	                    </select>
 	                </div>
