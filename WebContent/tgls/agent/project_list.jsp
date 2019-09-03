@@ -45,7 +45,7 @@
 							<input type="text" name="name" required lay-verify="required" placeholder="输入项目编号" autocomplete="off" class="layui-input">
 						</div>
 						<button class="layui-btn" lay-submit lay-filter="formDemo">检索</button>
-						<a href="${pageContext.request.contextPath }/tgls/agent/teacher_add.jsp" class="layui-btn">新增</a>
+						<a href="${pageContext.request.contextPath }/tgls/agent/project_add.jsp" class="layui-btn">新增</a>
 					</div>
 				</form>
 
@@ -66,30 +66,25 @@
 				<thead>
 					<tr>
 						<th>序号</th>
-						<th>教师编号</th>
-						<th>姓名</th>
-						<th>性别</th>
-						<th>邮箱</th>
-						<th>系部</th>
-						<th>职称</th>
-						<th>操作</th>
+						<th>项目编号</th>
+						<th>项目名称</th>
+						<th>项目信息</th>
+						<th>项目评级</th>
 					</tr>
 				</thead>
 				
 				<tbody>
 				
-					<c:forEach items="${allTeacher }" var="teacheres" varStatus="status">
+					<c:forEach items="${allProject }" var="projects" varStatus="status">
 						<tr>
 						<td>${status.index + 1 }</td>
-						<td>${teacheres.tchid }</td>
-						<td>${teacheres.tchname }</td>
-						<td>${teacheres.tchsex }</td>
-						<td>${teacheres.tchemail }</td>
-						<td>${teacheres.tchdep }</td>
-						<td>${teacheres.tchtitle }</td>
+						<td>${projects.proid }</td>
+						<td>${projects.proname }</td>
+						<td>${projects.proinfo }</td>
+						<td>${projects.prodegree }</td>
 						<td>
-							<a href="${pageContext.request.contextPath }/TeacherDelServlet?id=${teacheres.tchid}"><button class="layui-btn layui-btn-xs">删除</button></a>
-							<a href="${pageContext.request.contextPath }/TeacherUpdateUIServlet?id=${teacheres.tchid}"><button  class="layui-btn layui-btn-xs">修改</button></a>
+							<a href="${pageContext.request.contextPath }/ProjectDelServlet?id=${projects.proid}"><button class="layui-btn layui-btn-xs">删除</button></a>
+							<a href="${pageContext.request.contextPath }/ProjectUpdateUIServlet?id=${projects.proid}"><button  class="layui-btn layui-btn-xs">修改</button></a>
 						</td>
 						</tr>
 					</c:forEach>
