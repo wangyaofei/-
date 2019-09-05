@@ -13,10 +13,10 @@ import com.cppmanage.domain.MProject;
 import com.cppmanage.service.ProjectService;
 
 /**
- * Servlet implementation class TeacherUpdateServlet
+ * Servlet implementation class ProjectDetailServlet
  */
-@WebServlet("/ProjectUpdateServlet")
-public class ProjectUpdateServlet extends HttpServlet {
+@WebServlet("/ProjectDetailServlet")
+public class ProjectDetailServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
@@ -24,26 +24,19 @@ public class ProjectUpdateServlet extends HttpServlet {
 	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		request.setCharacterEncoding("utf-8");
-		
-		String proid = request.getParameter("proid");
-		String proname = request.getParameter("proname");
-		String proinfo = request.getParameter("proinfo");
-		String prodegree = request.getParameter("prodegree");
-		//把参数封装成对象
-		MProject mProject = new MProject();
-		mProject.setProid(proid);
-		mProject.setProname(proname);
-		mProject.setProinfo(proinfo);
-		mProject.setProdegree(prodegree);
+		String id = request.getParameter("id");
 		ProjectService projectService = new ProjectService();
 
 		try {
-			projectService.updateTeacher(mProject);
-			request.getRequestDispatcher("/ProjectListServlet").forward(request, response);
+			MProject mProject = projectService.getProjectWithID(id);
+			request.setAttribute("mProject", mProject);
+			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	
+		request.getRequestDispatcher("tgls/agent/project_detail.jsp").forward(request, response);
 	}
+
 }

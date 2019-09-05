@@ -68,8 +68,8 @@
 						<th>序号</th>
 						<th>项目编号</th>
 						<th>项目名称</th>
-						<th>项目信息</th>
 						<th>项目评级</th>
+						<th>操作</th>
 					</tr>
 				</thead>
 				
@@ -80,11 +80,11 @@
 						<td>${status.index + 1 }</td>
 						<td>${projects.proid }</td>
 						<td>${projects.proname }</td>
-						<td>${projects.proinfo }</td>
 						<td>${projects.prodegree }</td>
 						<td>
 							<a href="${pageContext.request.contextPath }/ProjectDelServlet?id=${projects.proid}"><button class="layui-btn layui-btn-xs">删除</button></a>
 							<a href="${pageContext.request.contextPath }/ProjectUpdateUIServlet?id=${projects.proid}"><button  class="layui-btn layui-btn-xs">修改</button></a>
+							<a href="${pageContext.request.contextPath }/ProjectDetailServlet?id=${projects.proid}"><button  class="layui-btn layui-btn-xs">详情</button></a>
 						</td>
 						</tr>
 					</c:forEach>
@@ -108,6 +108,7 @@
 					    }
 					});
 				});
+				
 			</script>
 		</div>
 	</body>

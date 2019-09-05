@@ -45,55 +45,38 @@
 
 	<body>
 		<div class="cBody">
-			<form id="addForm" class="layui-form" action="${pageContext.request.contextPath }/TeacherAddServlet" method="post">
-					<label style="font-size:30px;">&nbsp; &nbsp; &nbsp; 新增教师--> </label>
+			<form id="addForm" class="layui-form" action="${pageContext.request.contextPath }/ProjectAddServlet" method="post">
+					<label style="font-size:30px;">&nbsp; &nbsp; &nbsp; 新增项目--> </label>
 					<br /> <br /> <br /> <br />
 				<div class="layui-form-item">
-					<label class="layui-form-label">教师编号</label>
+					<label class="layui-form-label">项目编号</label>
 					<div class="layui-input-inline shortInput">
-						<input type="text" name="tchid" required autocomplete="off" class="layui-input">
+						<input type="text" name="proid" required autocomplete="off" class="layui-input">
 					</div>
 					<i class="iconfont icon-huaban bt"></i>
 				</div>
 				<div class="layui-form-item">
-					<label class="layui-form-label">教师姓名</label>
+					<label class="layui-form-label">项目名称</label>
 					<div class="layui-input-inline shortInput">
-						<input type="text" name="tchname" required autocomplete="off" class="layui-input">
+						<input type="text" name="proname" required autocomplete="off" class="layui-input">
 					</div>
 					<i class="iconfont icon-huaban bt"></i>
 				</div>
-				<div class="layui-form-item">
-					<label class="layui-form-label">教师密码</label>
-					<div class="layui-input-inline shortInput">
-						<input type="password" name="tchpsw" required autocomplete="off" class="layui-input">
-					</div>
-					<i class="iconfont icon-huaban bt"></i>
-				</div>
-				<div class="layui-form-item">
-					<label class="layui-form-label">教师性别</label>
-					<div class="layui-input-inline shortInput">
-						<input type="text" name="tchsex" autocomplete="off" class="layui-input">
-					</div>
-				</div>
-				<div class="layui-form-item">
-					<label class="layui-form-label">教师邮箱</label>
-					<div class="layui-input-inline shortInput">
-						<input type="text" name="tchemail" autocomplete="off" class="layui-input">
-					</div>
-				</div>
-				<div class="layui-form-item">
-					<label class="layui-form-label">教师系部</label>
-					<div class="layui-input-inline shortInput">
-						<input type="text" name="tchdep" autocomplete="off" class="layui-input">
-					</div>
-				</div>
-				<div class="layui-form-item">
-					<label class="layui-form-label">教师职称</label>
-					<div class="layui-input-inline shortInput">
-						<input type="text" name="tchtitle" autocomplete="off" class="layui-input">
+				
+				<div class="layui-form-item layui-form-text">
+					<label class="layui-form-label">项目信息</label>
+					<div class="layui-input-block">
+						<textarea name="proinfo" class="layui-textarea"></textarea>
 					</div>
 				</div>
 				
+				<div class="layui-form-item">
+					<label class="layui-form-label">项目评级</label>
+					<div class="layui-input-inline shortInput">
+						<input type="text" name="tchdegree" required autocomplete="off" class="layui-input">
+					</div>
+					<i class="iconfont icon-huaban bt"></i>
+				</div>
 				
 				<div class="layui-form-item">
 					<div class="layui-input-block">

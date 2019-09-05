@@ -14,7 +14,7 @@ import com.cppmanage.service.ProjectService;
 /**
  * Servlet implementation class TeacherUpdateUIServlet
  */
-@WebServlet("/TeacherUpdateUIServlet")
+@WebServlet("/ProjectUpdateUIServlet")
 public class ProjectUpdateUIServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
