@@ -15,9 +15,9 @@
 		<!-- 作者 -->
 		<meta name="revised" content="yaofeiwang.v3, 2019/05/01" />
 		<!-- 定义页面的最新版本 -->
-		<meta name="description" content="后台班级管理" />
+		<meta name="description" content="yaofeiwang" />
 		<!-- 网站简介 -->
-		<meta name="keywords" content="后台班级管理" />
+		<meta name="keywords" content="yaofeiwang" />
 		<title>项目式教学</title>
 
 		<!-- 公共样式 开始 -->
@@ -45,7 +45,7 @@
 							<input type="text" name="name" required lay-verify="required" placeholder="输入班号" autocomplete="off" class="layui-input">
 						</div>
 						<button class="layui-btn" lay-submit lay-filter="formDemo">检索</button>
-						<a href="${pageContext.request.contextPath }/ClassAddUIServlet" class="layui-btn">新增</a>
+						<a href="${pageContext.request.contextPath }/StudentAddUIServlet" class="layui-btn">新增</a>
 					</div>
 				</form>
 
@@ -66,21 +66,34 @@
 				<thead>
 					<tr>
 						<th>序号</th>
-						<th>班级编号</th>
-						<th>班级名称</th>
+						<th>学号</th>
+						<th>姓名</th>
+						<th>性别</th>
+						<th>邮箱</th>
+						<th>指导教师</th>
+						<th>所在班级</th>
+						<th>所在组</th>
+						<th>所选项目</th>
 						<th>操作</th>
 					</tr>
 				</thead>
 				
 				<tbody>
 				
-					<c:forEach items="${allClassofTeacher }" var="classes" varStatus="status">
+					<c:forEach items="${allStudentDisplay }" var="students" varStatus="status">
 						<tr>
 						<td>${status.index + 1 }</td>
-						<td>${classes.clsid }</td>
-						<td>${classes.clsname }</td>
+						<td>${students.stuid }</td>
+						<td>${students.stuname }</td>
+						<td>${students.stusex }</td>
+						<td>${students.stuemail }</td>
+						<td>${students.tchname }</td>
+						<td>${students.clsname }</td>
+						<td>${students.grpname }</td>
+						<td>${students.proname }</td>
 						<td>
-							<a href="${pageContext.request.contextPath }/ScoreListServlet?id=${classes.clsid }"><button class="layui-btn layui-btn-xs">成绩录入 / 查询</button></a>
+							<a href="${pageContext.request.contextPath }/StudentDelServlet?id=${students.stuid}"><button class="layui-btn layui-btn-xs">删除</button></a>
+							<a href="${pageContext.request.contextPath }/StudentUpdateUIServlet?id=${students.stuid}"><button  class="layui-btn layui-btn-xs">修改</button></a>
 						</td>
 						</tr>
 					</c:forEach>

@@ -14,5 +14,5 @@ public interface IScoreDAO {
 	int addScore(Score score) throws SQLException;
 	Score getScoreWithID(String id) throws SQLException;
 	//List<MScoreListDisplay> getAllDisplay() throws SQLException;
-	List<ScoreListDisplay> getAllDisplay();
+	List<ScoreListDisplay> getAllDisplay(String clsid, String tchid) throws SQLException;
 }

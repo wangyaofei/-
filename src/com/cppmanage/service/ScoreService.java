@@ -18,10 +18,10 @@ public class ScoreService {
 		return allScore;
 	}
 	
-	public List<ScoreListDisplay> getAllScoreDisplay() throws SQLException {
+	public List<ScoreListDisplay> getAllScoreDisplay(String clsid, String tchid) throws SQLException {
 		// TODO Auto-generated method stub
 		
-		List<ScoreListDisplay> allScore = iScoreDAO.getAllDisplay();
+		List<ScoreListDisplay> allScore = iScoreDAO.getAllDisplay(clsid,tchid);
 		return allScore;
 	}
 
