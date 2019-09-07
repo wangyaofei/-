@@ -65,7 +65,7 @@
 		            </li>
 		            
 		            <li>
-		                <a class="menuFA" href="javascript:void(0)" onclick="menuCAClick('${pageContext.request.contextPath }/ScoreListServlet',this)"><i class="iconfont icon-liuliangyunpingtaitubiao03 left"></i>成绩管理</a>
+		                <a class="menuFA" href="javascript:void(0)" onclick="menuCAClick('${pageContext.request.contextPath }/ClassListofTeacherServlet',this)"><i class="iconfont icon-liuliangyunpingtaitubiao03 left"></i>成绩管理</a>
 		            </li>
 		        </ul>
 		    </div>

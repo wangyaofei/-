@@ -45,41 +45,48 @@
 
 	<body>
 		<div class="cBody">
-			<form id="addForm" class="layui-form" action="${pageContext.request.contextPath }/ProjectUpdateServlet" method="post">
-					<label style="font-size:30px;">&nbsp; &nbsp; &nbsp; 项目修改--> </label>
+			<form id="addForm" class="layui-form" action="${pageContext.request.contextPath }/GroupAddServlet" method="post">
+					<label style="font-size:30px;">&nbsp; &nbsp; &nbsp; 新增小组--> </label>
 					<br /> <br /> <br /> <br />
 				<div class="layui-form-item">
-					<label class="layui-form-label">项目编号</label>
+					<label class="layui-form-label">小组编号</label>
 					<div class="layui-input-inline shortInput">
-						<input type="text" readonly  unselectable="on" name="proid" required autocomplete="off" class="layui-input" value="${mProject.proid }">
-					</div>
-					<i class="iconfont icon-huaban bt">不可更改</i>
-				</div>
-				<div class="layui-form-item">
-					<label class="layui-form-label">项目名称</label>
-					<div class="layui-input-inline shortInput">
-						<input type="text" name="proname" required autocomplete="off" class="layui-input" value="${mProject.proname }">
-					</div>
-					<i class="iconfont icon-huaban bt"></i>
-				</div>
-				
-				<div class="layui-form-item layui-form-text">
-					<label class="layui-form-label">项目信息</label>
-					<div class="layui-input-block">
-						<textarea name="proinfo" class="layui-textarea">${mProject.proinfo }</textarea>
-					</div>
-				</div>
-				
-				<div class="layui-form-item">
-					<label class="layui-form-label">项目评级</label>
-					<div class="layui-input-inline shortInput">
-						<input type="text" name="prodegree" required autocomplete="off" class="layui-input" value="${mProject.prodegree }">
+						<input type="text" name="grpid" required autocomplete="off" class="layui-input">
 					</div>
 					<i class="iconfont icon-huaban bt"></i>
 				</div>
 				<div class="layui-form-item">
+					<label class="layui-form-label">小组名称</label>
+					<div class="layui-input-inline shortInput">
+						<input type="text" name="grpname" required autocomplete="off" class="layui-input">
+					</div>
+					<i class="iconfont icon-huaban bt"></i>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">小组组长</label>
+	                <div class="layui-input-inline shortInput" >
+	                    <select name="grpleader">
+	                    	<c:forEach items="${allStudent }" var="students">
+	                    		<option value="${students.stuid }">${students.stuname }</option>
+	                    	</c:forEach>
+	                    </select>
+	                </div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">所选项目</label>
+	                <div class="layui-input-inline shortInput" >
+	                    <select name="proid">
+	                    	<c:forEach items="${allProject }" var="projects">
+	                    		<option value="${projects.proid }">${projects.proname }</option>
+	                    	</c:forEach>
+	                    </select>
+	                </div>
+				</div>
+				
+				<div class="layui-form-item">
 					<div class="layui-input-block">
-						<button class="layui-btn" lay-submit lay-filter="submitBut" id="add">立即修改</button>
+						<button class="layui-btn" lay-submit lay-filter="submitBut" id="add">立即提交</button>
+						<button type="reset" class="layui-btn layui-btn-primary">重置</button>
 					</div>
 				</div>
 			</form>
@@ -99,25 +106,13 @@
 		        };
 			</script>
 			
- 			<!--  
+			<!--  
 			<script>
 			$("#add").click(function() {
 				$("#addForm").submit();
 			});
 			</script>
  			-->
- 			
-			<script>
-			$(function() {
-				
-				$("#tchOption option[value=${mClass.tchid}]").prop("selected",true);
-				
-			});
-				
-			</script>
- 			
- 			
- 			
 		</div>
 	</body>
 

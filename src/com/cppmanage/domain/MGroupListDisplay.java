@@ -7,6 +7,7 @@ public class MGroupListDisplay {
 	private String grpid;
 	private String grpname;
 	private String grpleader;
+	private String stuname;
 	private String proid;
 	private String proname;
 }

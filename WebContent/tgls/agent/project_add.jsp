@@ -73,7 +73,7 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">项目评级</label>
 					<div class="layui-input-inline shortInput">
-						<input type="text" name="tchdegree" required autocomplete="off" class="layui-input">
+						<input type="text" name="prodegree" required autocomplete="off" class="layui-input">
 					</div>
 					<i class="iconfont icon-huaban bt"></i>
 				</div>

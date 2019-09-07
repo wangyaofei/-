@@ -9,14 +9,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.cppmanage.domain.MProject;
-import com.cppmanage.service.ProjectService;
+import com.cppmanage.service.GroupService;
 
 /**
- * Servlet implementation class ProjectDetailServlet
+ * Servlet implementation class ClassDelServlet
  */
-@WebServlet("/ProjectDetailServlet")
-public class ProjectDetailServlet extends HttpServlet {
+@WebServlet("/GroupDelServlet")
+public class GroupDelServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
@@ -24,18 +23,18 @@ public class ProjectDetailServlet extends HttpServlet {
 	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		
 		String id = request.getParameter("id");
-		ProjectService projectService = new ProjectService();
-
+		
+		GroupService groupService = new GroupService();
 		try {
-			MProject mProject = projectService.getProjectWithID(id);
-			request.setAttribute("mProject", mProject);
-			
+			groupService.delgroup(id);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		request.getRequestDispatcher("tgls/agent/project_detail.jsp").forward(request, response);
+		
+		request.getRequestDispatcher("/GroupListServlet").forward(request, response);
 	}
 
 }

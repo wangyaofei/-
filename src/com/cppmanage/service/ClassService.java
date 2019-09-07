@@ -48,4 +48,11 @@ public class ClassService {
 		imClassDAO.updateclass(mClass);
 	}
 
+	public List<MClass> getAllClassofTeacher(String tchid) throws SQLException {
+		List<MClass> allClassofTeacher = imClassDAO.getAllClassofTeacher(tchid);
+		return allClassofTeacher;
+		// TODO Auto-generated method stub
+		
+	}
+
 }

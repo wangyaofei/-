@@ -14,4 +14,5 @@ public interface IMClassDAO {
 	int addClass(MClass mclass) throws SQLException;
 	MClass getClassWithID(String id) throws SQLException;
 	List<MClassListDisplay> getAllDisplay() throws SQLException;
+	List<MClass> getAllClassofTeacher(String tchid) throws SQLException;
 }

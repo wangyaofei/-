@@ -8,6 +8,7 @@ import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 
 import com.cppmanage.dao.IMGroupDAO;
+import com.cppmanage.domain.MClassListDisplay;
 import com.cppmanage.domain.MGroup;
 import com.cppmanage.domain.MGroupListDisplay;
 import com.cppmanage.util.JDBCUtil;
@@ -53,9 +54,12 @@ public class MGroupDAOImpl implements IMGroupDAO {
 	}
 
 	@Override
-	public List<MGroupListDisplay> getAllDisplay() {
+	public List<MGroupListDisplay> getAllDisplay() throws SQLException {
 		// TODO Auto-generated method stub
-		return null;
+		String sql = "select grp.grpid,grpname,grpleader,stu.stuname,grp.proid,proname from mgroup as grp \r\n" + 
+				"left join student as stu on grp.grpleader=stu.stuid \r\n" + 
+				"left join mproject as pro on grp.proid=pro.proid;";
+		return qr.query(sql, new BeanListHandler<MGroupListDisplay>(MGroupListDisplay.class));
 	}
 
 }

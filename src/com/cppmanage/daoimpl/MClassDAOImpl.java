@@ -56,8 +56,15 @@ public class MClassDAOImpl implements IMClassDAO {
 	@Override
 	public List<MClassListDisplay> getAllDisplay() throws SQLException {
 		// TODO Auto-generated method stub
-		String sql = "select clsid,clsname,mclass.tchid,tchname from mclass,teacher where mclass.tchid=teacher.tchid;";
+		String sql = "select clsid,clsname,cls.tchid,tchname from mclass as cls LEFT JOIN teacher as tch on cls.tchid=tch.tchid;";
 		return qr.query(sql, new BeanListHandler<MClassListDisplay>(MClassListDisplay.class));
+	}
+
+	@Override
+	public List<MClass> getAllClassofTeacher(String tchid) throws SQLException {
+		// TODO Auto-generated method stub
+		String sql = "select * from mclass where mclass.tchid=?";
+		return qr.query(sql, new BeanListHandler<MClass>(MClass.class),tchid);
 	}
 	
 }

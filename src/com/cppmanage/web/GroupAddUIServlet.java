@@ -2,6 +2,7 @@ package com.cppmanage.web;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,13 +11,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.cppmanage.domain.MProject;
+import com.cppmanage.domain.Student;
+import com.cppmanage.domain.Teacher;
+import com.cppmanage.service.GroupService;
 import com.cppmanage.service.ProjectService;
+import com.cppmanage.service.StudentLoginService;
+import com.cppmanage.service.TeacherLoginService;
 
 /**
- * Servlet implementation class ProjectDetailServlet
+ * Servlet implementation class ClassAddUIServlet
  */
-@WebServlet("/ProjectDetailServlet")
-public class ProjectDetailServlet extends HttpServlet {
+@WebServlet("/GroupAddUIServlet")
+public class GroupAddUIServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
@@ -24,18 +30,20 @@ public class ProjectDetailServlet extends HttpServlet {
 	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String id = request.getParameter("id");
+		
 		ProjectService projectService = new ProjectService();
-
+		StudentLoginService studentLoginService = new StudentLoginService();
 		try {
-			MProject mProject = projectService.getProjectWithID(id);
-			request.setAttribute("mProject", mProject);
+			List<MProject> allProject = projectService.getAllProject();
+			request.setAttribute("allProject", allProject);
 			
+			List<Student> allStudent = studentLoginService.getAllStudent();
+			request.setAttribute("allStudent", allStudent);
+			
+			request.getRequestDispatcher("tgls/agent/group_add.jsp").forward(request, response);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		request.getRequestDispatcher("tgls/agent/project_detail.jsp").forward(request, response);
 	}
-
 }

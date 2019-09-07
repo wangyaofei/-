@@ -13,5 +13,5 @@ public interface IMGroupDAO {
 	int addGroup(MGroup group) throws SQLException;
 	MGroup getGroupWithID(String id) throws SQLException;
 	//List<MGroupListDisplay> getAllDisplay() throws SQLException;
-	List<MGroupListDisplay> getAllDisplay();
+	List<MGroupListDisplay> getAllDisplay() throws SQLException;
 }

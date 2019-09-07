@@ -46,7 +46,7 @@
 	<body>
 		<div class="cBody">
 			<form id="addForm" class="layui-form" action="${pageContext.request.contextPath }/TeacherUpdateServlet" method="post">
-					<label style="font-size:30px;">&nbsp; &nbsp; &nbsp; 班级修改--> </label>
+					<label style="font-size:30px;">&nbsp; &nbsp; &nbsp; 教师修改--> </label>
 					<br /> <br /> <br /> <br />
 								<div class="layui-form-item">
 					<label class="layui-form-label">教师编号</label>

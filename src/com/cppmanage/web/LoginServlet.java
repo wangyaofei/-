@@ -3,6 +3,7 @@ package com.cppmanage.web;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -37,8 +38,13 @@ public class LoginServlet extends HttpServlet {
 				Student student = studentloginService.login(id,password);
 				
 				HttpSession session = request.getSession();
-				session.setAttribute("student", student);
 				
+				Cookie cookie = new Cookie("JSESSIONID", session.getId());
+				cookie.setPath("/CPPmanage");
+				cookie.setMaxAge(60*2);
+				response.addCookie(cookie);
+				
+				session.setAttribute("student", student);
 				response.sendRedirect(request.getContextPath()+"/student.jsp");
 				
 			} catch (Exception e) {
@@ -60,6 +66,12 @@ public class LoginServlet extends HttpServlet {
 				Teacher teacher = teacherloginService.login(id,password);
 				
 				HttpSession session = request.getSession();
+				
+				Cookie cookie = new Cookie("JSESSIONID", session.getId());
+				cookie.setPath("/CPPmanage");
+				cookie.setMaxAge(60*2);
+				response.addCookie(cookie);
+				
 				session.setAttribute("teacher", teacher);
 				
 				response.sendRedirect(request.getContextPath()+"/teacher.jsp");
@@ -82,6 +94,12 @@ public class LoginServlet extends HttpServlet {
 				Admin admin = adminloginService.login(id,password);
 				
 				HttpSession session = request.getSession();
+				
+				Cookie cookie = new Cookie("JSESSIONID", session.getId());
+				cookie.setPath("/CPPmanage");
+				cookie.setMaxAge(60*2);
+				response.addCookie(cookie);
+				
 				session.setAttribute("admin", admin);
 				
 				response.sendRedirect(request.getContextPath()+"/admin.jsp");

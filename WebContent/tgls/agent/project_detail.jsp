@@ -37,9 +37,14 @@
 	</head>
 
 	<body>
-		<h1>项目编号:${mProject.proid }</h1> <br />
-		<h1>项目名称:${mProject.proname }</h1> <br />
-		<h2>项目信息:${mProject.proinfo }</h2> <br />
-		<h2>项目评级:${mProject.prodegree }</h2> <br />
+		<br /><h1 align="center" style="font-size:24px"><b>项目详情</b></h1> <br />
+		<h1 style="font-size:15px"><b>&nbsp;&nbsp;项目编号：</b></h1><br />
+		<h2>&nbsp;&nbsp;${mProject.proid }</h2> <br />
+		<h1 style="font-size:15px"><b>&nbsp;&nbsp;项目名称：</b></h1><br />
+		<h2>&nbsp;&nbsp;${mProject.proname }</h2> <br />
+		<h1 style="font-size:15px"><b>&nbsp;&nbsp;项目信息：</b></h1><br />
+		<h2>&nbsp;&nbsp;${mProject.proinfo }</h2> <br />
+		<h1 style="font-size:15px"><b>&nbsp;&nbsp;项目评级：</b></h1><br />
+		<h2>&nbsp;&nbsp;${mProject.prodegree }</h2> <br />
 	</body>
 </html>
