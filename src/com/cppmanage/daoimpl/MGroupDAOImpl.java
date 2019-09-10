@@ -8,7 +8,6 @@ import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 
 import com.cppmanage.dao.IMGroupDAO;
-import com.cppmanage.domain.MClassListDisplay;
 import com.cppmanage.domain.MGroup;
 import com.cppmanage.domain.MGroupListDisplay;
 import com.cppmanage.util.JDBCUtil;

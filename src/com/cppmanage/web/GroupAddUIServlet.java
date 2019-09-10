@@ -12,11 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.cppmanage.domain.MProject;
 import com.cppmanage.domain.Student;
-import com.cppmanage.domain.Teacher;
-import com.cppmanage.service.GroupService;
 import com.cppmanage.service.ProjectService;
 import com.cppmanage.service.StudentLoginService;
-import com.cppmanage.service.TeacherLoginService;
 
 /**
  * Servlet implementation class ClassAddUIServlet

@@ -8,9 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.cppmanage.domain.MClass;
 import com.cppmanage.domain.MGroup;
-import com.cppmanage.service.ClassService;
 import com.cppmanage.service.GroupService;
 
 /**

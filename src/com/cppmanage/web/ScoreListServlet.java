@@ -12,10 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.cppmanage.domain.ScoreListDisplay;
-import com.cppmanage.domain.StudentListDisplay;
 import com.cppmanage.domain.Teacher;
 import com.cppmanage.service.ScoreService;
-import com.cppmanage.service.StudentLoginService;
 
 /**
  * Servlet implementation class StudentListServlet
