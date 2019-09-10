@@ -51,7 +51,6 @@ public class GroupUpdateUIServlet extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	
 		request.getRequestDispatcher("tgls/agent/group_update.jsp").forward(request, response);
 	}
 
