@@ -68,12 +68,7 @@
 						<th>序号</th>
 						<th>学号</th>
 						<th>姓名</th>
-						<th>性别</th>
-						<th>邮箱</th>
-						<th>指导教师</th>
-						<th>所在班级</th>
-						<th>所在组</th>
-						<th>所选项目</th>
+						<th>成绩</th>
 						<th>操作</th>
 					</tr>
 				</thead>

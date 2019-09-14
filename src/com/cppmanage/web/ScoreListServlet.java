@@ -16,19 +16,22 @@ import com.cppmanage.domain.Teacher;
 import com.cppmanage.service.ScoreService;
 
 /**
- * Servlet implementation class StudentListServlet
+ * Servlet implementation class ScoreListServlet
  */
 @WebServlet("/ScoreListServlet")
 public class ScoreListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
 	/**
 	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		
+		//获取clsid
 		String clsid = request.getParameter("clsid");
 		HttpSession session = request.getSession();
+		
+		//获取tchid
 		Teacher teacher = new Teacher();
 		teacher = (Teacher) session.getAttribute("teacher");
 		String tchid = teacher.getTchid();

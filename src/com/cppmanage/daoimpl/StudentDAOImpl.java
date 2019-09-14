@@ -53,6 +53,10 @@ public class StudentDAOImpl implements IStudentDAO {
 		String sql = "insert into student values(?,?,?,?,?,?,?,?,?)";
 		qr.update(sql,student.getStuid(),student.getStuname(),student.getStupsw(),student.getStusex(),student.getStuemail(),
 				student.getTchid(),student.getClsid(),student.getGrpid(),student.getProid());
+		
+		String sql2 = "insert into score values(?,?,?,?)";
+		qr.update(sql,student.getStuid(),student.getStuname(),student.getStupsw(),student.getStusex(),student.getStuemail(),
+				student.getTchid(),student.getClsid(),student.getGrpid(),student.getProid());
 		return 0;
 	}
 

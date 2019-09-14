@@ -79,14 +79,12 @@ INSERT into student(stuid,stuname,stupsw,stusex,stuemail) VALUES('3','’≈Õ¨—ß','1
 
 create table score
 (
-	scrid varchar(32) PRIMARY KEY,
+	scrid varchar(32) PRIMARY KEY auto_increment,
 	scrvalue int,
-	tchid varchar(32),
 	stuid varchar(32),
-	FOREIGN KEY (tchid) REFERENCES teacher(tchid),
 	FOREIGN KEY (stuid) REFERENCES student(stuid)
 );
 
-INSERT into score(scrid,scrvalue) values('1',95);
+
 
 

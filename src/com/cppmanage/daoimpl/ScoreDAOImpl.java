@@ -56,7 +56,7 @@ public class ScoreDAOImpl implements IScoreDAO {
 	@Override
 	public List<ScoreListDisplay> getAllDisplay(String clsid, String tchid) throws SQLException {
 		// TODO Auto-generated method stub
-		
+		//String sql = "select scrid,scrvalue,scr.tchid,scr.stuid,tch.tchname,stu.stuname from student";
 		
 		return null;
 	}
